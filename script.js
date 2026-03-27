@@ -8,6 +8,36 @@ let polygonTop = document.querySelector('.polygon-top');
 let footerColor = document.querySelector('footer');
 let innerFooter = document.querySelector('.inner-bottom-bar');
 let polygonBottom = document.querySelector('.polygon-bottom');
+let homeBtn = document.querySelector('.teams-page');
+let column = document.querySelector('.columns-container');
+let columnButtons = document.querySelectorAll('.column img');
+let logoTop = document.querySelector('.logo-top');
+
+columnButtons.forEach(function(teamBanner) {
+    teamBanner.addEventListener('click', function(event) {
+         column.style.display = 'none';
+         logoTop.style.display = 'none';
+         homeBtn.style.display = 'block';
+    });
+});
+
+homeBtn.addEventListener('click', function() 
+   {
+        body.style.backgroundImage = "url('img/bg.jpg')";
+        textChange.textContent = "Click on team banner for stadium background";
+        locationText.textContent = "";
+        teamLogo.src='logos/ncaa-logo.png';
+        topBar.style.backgroundColor = "#014c8d";
+        innerBar.style.backgroundColor = "#ffd047";
+        polygonTop.style.backgroundColor = "#ffd047";
+        footerColor.style.backgroundColor = "#ffd047";
+        innerFooter.style.backgroundColor = "#014c8d";
+        polygonBottom.style.backgroundColor = "#ffd047";
+        logoTop.style.display = 'block';
+        column.style.display = 'flex';
+        homeBtn.style.display = 'none';
+   }
+);
 
 document.querySelector('.alabama').addEventListener('click', function()
     {
@@ -27,7 +57,7 @@ document.querySelector('.alabama').addEventListener('click', function()
 document.querySelector('.arkansas').addEventListener('click', function()
     {
         body.style.backgroundImage = "url('img/arkansas-bg.jpeg')";
-        textChange.textContent = "Donald W. Reynolds Stadium";
+        textChange.textContent = "Reynolds Stadium";
         locationText.textContent = "Fayetteville, Arkansas";
         teamLogo.src= 'logos/arkansas.png';
         topBar.style.backgroundColor = "#9d2235";
@@ -87,7 +117,7 @@ document.querySelector('.mississippi-state').addEventListener('click', function(
 document.querySelector('.mississippi').addEventListener('click', function()
     {
         body.style.backgroundImage = "url('img/mississippi-bg.jpg')";
-        textChange.textContent = "Vaught Hemingway Stadium";
+        textChange.textContent = "Hemingway Stadium";
         locationText.textContent = "Oxford, Mississippi";
         teamLogo.src = 'logos/ole-miss.png';
         topBar.style.backgroundColor = "#14213d";
